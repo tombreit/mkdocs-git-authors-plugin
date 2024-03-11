@@ -33,11 +33,11 @@ jobs:
         pip install -r tests/test_requirements.txt
         pip install -e .
         pytest --cov=mkdocs_git_authors_plugin --cov-report=xml
-    - name: Upload coverage to Codecov
-      if: "contains(env.USING_COVERAGE, matrix.python-version)"
-      uses: codecov/codecov-action@v1
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-        file: ./coverage.xml
-        flags: unittests
-        fail_ci_if_error: true
+    # - name: Upload coverage to Codecov
+    #   if: "contains(env.USING_COVERAGE, matrix.python-version)"
+    #   uses: codecov/codecov-action@v1
+    #   with:
+    #     token: ${{ secrets.CODECOV_TOKEN }}
+    #     file: ./coverage.xml
+    #     flags: unittests
+    #     fail_ci_if_error: true
